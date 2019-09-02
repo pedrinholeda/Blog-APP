@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const express = require("express");
+
 const Schema = mongoose.Schema;
 
 const Categoria = new Schema({
@@ -8,11 +10,11 @@ const Categoria = new Schema({
   },
   slug: {
     type: String,
-    required: true
+    require: true
   },
   date: {
     type: Date,
-    defaylt: Date.now()
+    default: Date.now()
   }
 });
 

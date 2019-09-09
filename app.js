@@ -47,7 +47,9 @@ app.set("view engine", "handlebars");
 // Mongoose
 mongoose.Promise = global.Promise;
 mongoose
-  .connect("mongodb://localhost/blogapp")
+  .connect(
+    "mongodb+srv://pedroleda:Pedroleda123@nodeapp-9c5np.mongodb.net/test?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Conectado com o Mongo");
   })
@@ -138,7 +140,7 @@ app.get("/post", (req, res) => {
 app.use("/admin", admin);
 app.use("/usuarios", usuarios);
 //outros
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log("Servidor Rodando! ");
 });

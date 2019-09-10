@@ -47,9 +47,7 @@ app.set("view engine", "handlebars");
 // Mongoose
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(
-    "mongodb+srv://pedroleda:Pedroleda123@nodeapp-9c5np.mongodb.net/test?retryWrites=true&w=majority"
-  )
+  .connect("mongodb://localhost/blogapp")
   .then(() => {
     console.log("Conectado com o Mongo");
   })

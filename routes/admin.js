@@ -7,7 +7,7 @@ const Postagem = mongoose.model("postagens");
 const Categoria = mongoose.model("categorias");
 const { eAdmin } = require("../helpers/eAdmin"); // pega a função eAdmin dentro do objeto eAdmin
 
-router.get("/", (req, res) => {
+router.get("/", eAdmin, (req, res) => {
   res.render("admin/index");
 });
 
@@ -238,4 +238,5 @@ router.get("/postagens/deletar/:id", eAdmin, (req, res) => {
       res.redirect("/admin/postagens");
     });
 });
+
 module.exports = router;
